@@ -1,4 +1,4 @@
-// import {savetoStorage, getStorage, removefromStorage} from "./localstorage.js";
+import {savetoStorage, getStorage, removefromStorage} from "./localstorage.js";
 
 let pokInput = document.getElementById("pokInput");
 let pokRandom = document.getElementById("pokRandom");
@@ -48,6 +48,26 @@ const getEvo = async (pokemon) =>{
 }
 
 
+pokInput.addEventListener("keydown", async (event)=>{
+    if(event.key === "Enter"){
+        populate(event.target.value);
+
+
+    }
+});
+
+
+sprite.addEventListener("click", ()=>{
+            if(shinyBool === false){
+                sprite.src = pokemon.sprites.front_shiny;
+                shinyBool = true;
+            }else{
+                sprite.src = pokemon.sprites.front_default;
+                shinyBool = false;
+            }
+ });
+
+
 pokRandom.addEventListener("click", (event)=>{
     let rando = 1 + Math.floor(Math.random() * 649);
     populate(rando);
@@ -55,19 +75,22 @@ pokRandom.addEventListener("click", (event)=>{
 
 
 const populate = async (event) =>{
-    pokemon = await getPokemon(event);
-        id = await getLocation(event);
+    let pokemon = await getPokemon(event);
+        let id = await getLocation(event);
         
         let sid = await getEvo(pokemon);
 
+        // savetoStorage(pokemon.name);
+        //^adds pokemon searched to favorites on enter instead of on btn click
+
         shinyBool = false;
 
-        if(pokemon.sprites.front_female === null){
-            hiddenGender.style.display = "none";
-        }else{
-            hiddenGender.style.display = "block";
-        }
-        pokId.textContent = pokemon.id;
+        // if(pokemon.sprites.front_female === null){
+        //     hiddenGender.style.display = "none";
+        // }else{
+        //     hiddenGender.style.display = "block";
+        // }
+        pokId.textContent = "#"+pokemon.id;
         pokName.textContent = pokemon.name;
         sprite.src = pokemon.sprites.front_default;
 
@@ -146,26 +169,6 @@ const populate = async (event) =>{
 
 
 
-pokInput.addEventListener("keydown", async (event)=>{
-    if(event.key === "Enter"){
-        populate(event.target.value);
-
-
-    }
-});
-
-
-
-        sprite.addEventListener("click", ()=>{
-            if(shinyBool === false){
-                sprite.src = pokemon.sprites.front_shiny;
-                shinyBool = true;
-            }else{
-                sprite.src = pokemon.sprites.front_default;
-                shinyBool = false;
-            }
-        });
-
 
 //variables needed to manipulate:
 //NAME -> {name}
@@ -179,3 +182,30 @@ pokInput.addEventListener("keydown", async (event)=>{
 //EVOLUTION PATH -> {species.url. evolution_chain.url .chain.evolves_to[0].species.name} or if you fetch from https://pokeapi.co/api/v2/pokemon-species/{id# of pokemon} -> evolves_from_species.name (only works for evolved mons) 
 //to grab sprite of evolution -> inside https://pokeapi.co/api/v2/pokemon-species/{id of current pokemon} -> pokedex_numbers[0].entry_number  (pokedex_numbers[0].pokedex.name MUST BE "national", so [0]
 
+// LOCAL STORAGE AND FAVORITE BUTTONS
+addFaves.addEventListener("click", () =>{
+    savetoStorage(pokemon.name);
+})
+
+pokFav.addEventListener('click', ()=>{
+    let favorites = getStorage();
+    grabFaves.textContent = "";
+    favorites.map(pokemonName =>{
+        let p = document.createElement("p");
+        p.textContent = pokemonName;
+        p.className = "mb-6 text-lg text-black pixel"
+
+        let button = document.createElement("button");
+        button.type = "button";
+        button.textContent = "X";
+        button.classList.add("text-gray-800", "bg-transparent", "hover:bg-gray-200", "hover:text-gray-900","rounded-lg", "text-base", "w-10", "h-10", "justify-end")
+
+        button.addEventListener("click", () =>{
+            removefromStorage(pokemonName);
+            p.remove();
+        })
+
+        p.append(button);
+        grabFaves.append(p);
+    })
+});

@@ -6,6 +6,10 @@
     font-family: Pixel;
     src: url(../Assets/PixelifySans-VariableFont_wght.ttf);
 }
+@font-face {
+    font-family: Iceberg;
+    src: url(../Assets/Iceberg-Regular.ttf);
+}
 
 .pokeBgC{
     background-color: #55BEA5;
@@ -16,6 +20,9 @@
 .pixel{
     font-family: Pixel;
 }
+.ice{
+    font-family: Iceberg;
+}
 .purple{
     background-color: #C5AAF0;
 }
@@ -24,6 +31,7 @@
 }
 .pink{
     background-color: #F4BAE1;
+    height: 600px;
 }
 .mainImg{
     height: 200px;
@@ -44,4 +52,35 @@
 .btnBorder{
     border: 3px solid black;
     border-radius: 3px;
+}
+.favDivBg{
+    background-color: #AAF0DB;
+}
+.boxBorder{
+    border: 5px solid black;
+    border-radius: 5px;
+}
+.purpW{
+    width: 400px;
+}
+.bluW{
+    width: 350px;
+}
+.boxH{
+    height: 700px;
+}
+
+@media screen and (min-width: 1024px) {
+    .pink{
+        height: 250px;
+    }
+    .purpW{
+        width: 650px;
+    }
+    .bluW{
+        width: 550px;
+    }
+    .boxH{
+        height: 450px;
+    }
 }

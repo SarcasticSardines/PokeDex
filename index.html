@@ -11,108 +11,40 @@
 <body class="pokeBgC">
 
     <!-- container -->
-    <div class="mx-11 my-5">
+    <div class="lg:mx-11 mx-2 my-5">
         <!-- row -->
         <div class="lg:flex lg:justify-between">
             <!-- cols -->
-            <div>
+            <div class="flex justify-center">
                 <input id="pokInput" class="pixel btnHeight w-96 text-xl" placeholder="Search Pokemon here" type="text">
             </div>
 
-            <div>
+            <div class="flex justify-center">
                 <button id="pokRandom" class="pixel btnHeight randomRed text-white btnBorder text-xl w-36" type="button"> <span>Random</span> </button>
             </div>
 
-            <div>
+            <div class="flex justify-between">
+            <div class="lg:mr-44 my-6 lg:mt-0">
                 <button id="addFaves" class="btnHeight" type="button"> <img class="btnHeight" src="./Assets/loveball.png" alt="loveball button"> </button>
             </div>
 
-            <div>
+            <div class="my-6 lg:mt-0">
                 <button id="pokFav" class="pixel btnHeight favWhite redTxt btnBorder text-xl w-40" type="button" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="right" aria-controls="drawer-right-example"> <span>Favorite</span> </button>
             </div>
         </div>
+    </div>
 
     </div>
 
-
-    <div>
-        <!-- 1st box w/sprite, name, and typing -->
-        <div class="purple">
-            <div>
-                <div>
-                    <p id="pokId">ID</p>
-                </div>
-                <div>
-                    <p id="pokName">NAME</p>
-                </div>
-            </div>
-            <div id="hiddenGender">
-                <div> <button id="maleBtn"> <img src="" alt="male symbol button"> </button> </div>
-                <div> <button id="femaleBtn"> <img src="" alt="female symbol button"> </button> </div>
-            </div>
-            <div>
-                <img id="sprite" class="mainImg flex justify-center" src="" alt="Pokemon Sprite">
-            </div>
-            <div>
-                <div>
-                    <p id="type1">PlaceHolder</p>
-                </div>
-                <div id="monoHide">
-                    <p  id="type2">PlaceHolder2</p>
-                </div>
-            </div>
-        </div>
-        <!-- 2nd box w/abilities and moves -->
-        <div class="blue">
-            <div>
-                <p>Abilities</p>
-            </div>
-            <div>
-                <p id="pokAbility"></p>
-            </div>
-            <div>
-                <p>Learnset</p>
-            </div>
-            <div>
-                <p id="pokMove" style="overflow-y: auto;">Moves...</p>
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="pink">
-        <!-- location section -->
-        <div>
-            <div>
-                <p>Can be found in:</p>
-            </div>
-            <div>
-                <p id="pokLocation">LOCATION PLACEHOLDER</p>
-            </div>
-        </div>
-        <!-- evolution section -->
-        <div>
-            <div>
-                <p>Evolution Line:</p>
-            </div>
-            <div id="evoChain">
-                <div> <p id="stageBase"> Base</p> </div>
-                <div> <p id="stage1"> Stage 1</p> </div>
-                <div> <p id="stage2"> Stage 2</p> </div>
-            </div>
-        </div>
-    </div>
-
-
+    
     <!-- drawer to hold favorites -->
  
 <!-- drawer component -->
 <div id="drawer-right-example"
-    class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-80 dark:bg-gray-800"
+    class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full favDivBg w-80"
     tabindex="-1" aria-labelledby="drawer-right-label">
     <h5 id="drawer-right-label"
-        class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"><svg
+        class="inline-flex items-center mb-4 font-semibold text-black text-2xl pixel"><svg
             class="w-4 h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
             viewBox="0 0 20 20">
             <path
@@ -126,15 +58,90 @@
         </svg>
         <span class="sr-only">Close menu</span>
     </button>
-    <p id="grabFaves" class="mb-6 text-sm text-gray-500 dark:text-gray-400">Pokemon Here</p>
+    <p id="grabFaves" class="mb-6 text-lg text-black pixel">Pokemon Here</p>
 </div>
 
 
 
 
 
+    <div class="lg:flex lg:justify-around lg:mx-10 lg:my-32">
+        <!-- 1st box w/sprite, name, and typing -->
+        <div class="purple boxBorder purpW boxH m-auto">
+            <div class="lg:flex lg:justify-evenly my-5">
+                <div class="text-center lg:text-start">
+                    <p id="pokId" class="ice text-5xl">ID</p>
+                </div>
+                <div class="text-center lg:text-start">
+                    <p id="pokName" class="ice text-5xl">NAME</p>
+                </div>
+            </div>
+            <div id="hiddenGender" style="display: none;">
+                <!-- ^^^ class="flex justify-between" -->
+                <div> <button id="maleBtn"> <img src="" alt="male symbol button"> </button> </div>
+                <div> <button id="femaleBtn"> <img src="" alt="female symbol button"> </button> </div>
+            </div>
+            <div class="flex justify-center mt-9">
+                <img id="sprite" class="mainImg flex justify-center" src="" alt="Pokemon Sprite">
+            </div>
+            <div class="flex justify-evenly mt-12">
+                <div class="bg-gray-800 text-white px-10 py-4">
+                    <p id="type1">PlaceHolder</p>
+                </div>
+                <div id="monoHide" class="bg-gray-800 text-white px-10 py-4">
+                    <p  id="type2">PlaceHolder2</p>
+                </div>
+            </div>
+        </div>
+        <!-- 2nd box w/abilities and moves -->
+        <div class="blue boxBorder bluW text-white ice boxH mx-auto">
+            <div class="my-5 mx-5">
+                <p class="text-5xl">Abilities</p>
+            </div>
+            <div class="mx-4 my-8">
+                <p id="pokAbility" class="text-4xl"></p>
+            </div>
+            <div class="my-5 mx-5">
+                <p class="text-5xl">Learnset</p>
+            </div>
+            <div class="mx-4 my-8" style="overflow-y: auto; height: 160px;">
+                <p id="pokMove" class="text-4xl">Moves...</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="pink lg:mt-40">
+        <!-- location section -->
+        <div>
+            <div>
+                <p>Can be found in:</p>
+            </div>
+            <div>
+                <p id="pokLocation">LOCATION PLACEHOLDER</p>
+            </div>
+        
+        <!-- evolution section -->
+        
+            <div>
+                <p>Evolution Line:</p>
+            </div>
+            <div id="evoChain">
+                <div> <p id="stageBase"> Base</p> </div>
+                <div> <p id="stage1"> Stage 1</p> </div>
+                <div> <p id="stage2"> Stage 2</p> </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
     <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
-    <script src="./Scripts/app.js"></script>
+    <script type="module"  src="./Scripts/app.js"></script>
 </body>
 
 </html>
