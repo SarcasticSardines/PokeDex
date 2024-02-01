@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/output.css">
+    <title>PokeDex</title>
+</head>
+
+<body class="pokeBgC">
+
+    <!-- container -->
+    <div>
+        <!-- row -->
+        <div>
+            <!-- cols -->
+            <div>
+                <input id="pokInput" placeholder="Search Pokemon here" type="text">
+            </div>
+
+            <div>
+                <button id="pokRandom"> <span>Random</span> </button>
+            </div>
+
+            <div>
+                <button id="pokFav" type="button" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="right" aria-controls="drawer-right-example"> <span>Favorite</span> </button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div>
+        <!-- 1st box w/sprite, name, and typing -->
+        <div class="purple">
+            <div>
+                <div>
+                    <p id="pokId">ID</p>
+                </div>
+                <div>
+                    <p id="pokName">NAME</p>
+                </div>
+            </div>
+            <div id="hiddenGender">
+                <div> <button id="maleBtn"> <img src="" alt="male symbol button"> </button> </div>
+                <div> <button id="femaleBtn"> <img src="" alt="female symbol button"> </button> </div>
+            </div>
+            <div>
+                <img id="sprite" class="mainImg flex justify-center" src="" alt="Pokemon Sprite">
+            </div>
+            <div>
+                <div>
+                    <p id="type1">PlaceHolder</p>
+                </div>
+                <div id="monoHide">
+                    <p  id="type2">PlaceHolder2</p>
+                </div>
+            </div>
+        </div>
+        <!-- 2nd box w/abilities and moves -->
+        <div class="blue">
+            <div>
+                <p>Abilities</p>
+            </div>
+            <div>
+                <p id="pokAbility"></p>
+            </div>
+            <div>
+                <p>Learnset</p>
+            </div>
+            <div>
+                <p id="pokMove" style="overflow-y: auto;">Moves...</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="pink">
+        <!-- location section -->
+        <div>
+            <div>
+                <p>Can be found in:</p>
+            </div>
+            <div>
+                <p id="pokLocation">LOCATION PLACEHOLDER</p>
+            </div>
+        </div>
+        <!-- evolution section -->
+        <div>
+            <div>
+                <p>Evolution Line:</p>
+            </div>
+            <div id="evoChain">
+                <div> <p id="stageBase"> Base</p> </div>
+                <div> <p id="stage1"> Stage 1</p> </div>
+                <div> <p id="stage2"> Stage 2</p> </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- drawer to hold favorites -->
+ 
+<!-- drawer component -->
+<div id="drawer-right-example"
+    class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-80 dark:bg-gray-800"
+    tabindex="-1" aria-labelledby="drawer-right-label">
+    <h5 id="drawer-right-label"
+        class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"><svg
+            class="w-4 h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+            viewBox="0 0 20 20">
+            <path
+                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+        </svg>Favorites</h5>
+    <button type="button" data-drawer-hide="drawer-right-example" aria-controls="drawer-right-example"
+        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
+        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+        </svg>
+        <span class="sr-only">Close menu</span>
+    </button>
+    <p id="grabFaves" class="mb-6 text-sm text-gray-500 dark:text-gray-400">Pokemon Here</p>
+</div>
+
+
+
+
+
+    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="./Scripts/app.js"></script>
+</body>
+
+</html>

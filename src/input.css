@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Pixel;
+    src: url(../Assets/PixelifySans-VariableFont_wght.ttf);
+}
+
+.pokeBgC{
+    background-color: #55BEA5;
+    background-image: url(../Assets/tile-grid-png-6.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.pixel{
+    font-family: Pixel;
+}
+.purple{
+    background-color: #C5AAF0;
+}
+.blue{
+    background-color: #462EA7;
+}
+.pink{
+    background-color: #F4BAE1;
+}
+.mainImg{
+    height: 200px;
+    width: 200px;
+}
