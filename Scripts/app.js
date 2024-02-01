@@ -1,3 +1,5 @@
+import {savetoStorage, getStorage, removefromStorage} from "./localstorage.js";
+
 let pokInput = document.getElementById("pokInput");
 let pokRandom = document.getElementById("pokRandom");
 let pokFav = document.getElementById("pokFav");
