@@ -11,20 +11,24 @@
 <body class="pokeBgC">
 
     <!-- container -->
-    <div>
+    <div class="mx-11 my-5">
         <!-- row -->
-        <div>
+        <div class="lg:flex lg:justify-between">
             <!-- cols -->
             <div>
-                <input id="pokInput" placeholder="Search Pokemon here" type="text">
+                <input id="pokInput" class="pixel btnHeight w-96 text-xl" placeholder="Search Pokemon here" type="text">
             </div>
 
             <div>
-                <button id="pokRandom"> <span>Random</span> </button>
+                <button id="pokRandom" class="pixel btnHeight randomRed text-white btnBorder text-xl w-36" type="button"> <span>Random</span> </button>
             </div>
 
             <div>
-                <button id="pokFav" type="button" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="right" aria-controls="drawer-right-example"> <span>Favorite</span> </button>
+                <button id="addFaves" class="btnHeight" type="button"> <img class="btnHeight" src="./Assets/loveball.png" alt="loveball button"> </button>
+            </div>
+
+            <div>
+                <button id="pokFav" class="pixel btnHeight favWhite redTxt btnBorder text-xl w-40" type="button" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="right" aria-controls="drawer-right-example"> <span>Favorite</span> </button>
             </div>
         </div>
 
@@ -130,7 +134,7 @@
 
 
     <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
-    <script type="module" src="./Scripts/app.js"></script>
+    <script src="./Scripts/app.js"></script>
 </body>
 
 </html>

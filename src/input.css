@@ -29,3 +29,19 @@
     height: 200px;
     width: 200px;
 }
+.btnHeight{
+    height: 75px;
+}
+.randomRed{
+    background-color: #B00B00;
+}
+.favWhite{
+    background-color: white;
+}
+.redTxt{
+    color: #B00B00;
+}
+.btnBorder{
+    border: 3px solid black;
+    border-radius: 3px;
+}

@@ -1,7 +1,8 @@
-import {savetoStorage, getStorage, removefromStorage} from "./localstorage.js";
+// import {savetoStorage, getStorage, removefromStorage} from "./localstorage.js";
 
 let pokInput = document.getElementById("pokInput");
 let pokRandom = document.getElementById("pokRandom");
+let addFaves = document.getElementById("addFaves");
 let pokFav = document.getElementById("pokFav");
 let pokId = document.getElementById("pokId");
 let pokName = document.getElementById("pokName");
@@ -24,7 +25,7 @@ let grabFaves = document.getElementById("grabFaves");
 let shinyBool;
 
 const getPokemon = async (pokemon) => {
-    const promise = await fetch("https://pokeapi.co/api/v2/pokemon/" +pokemon);
+    const promise = await fetch("https://pokeapi.co/api/v2/pokemon/" + pokemon);
     const data = await promise.json();
     console.log(data);
     return data;
@@ -51,6 +52,7 @@ pokRandom.addEventListener("click", (event)=>{
     let rando = 1 + Math.floor(Math.random() * 649);
     populate(rando);
 });
+
 
 const populate = async (event) =>{
     pokemon = await getPokemon(event);
