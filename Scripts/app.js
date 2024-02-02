@@ -86,6 +86,8 @@ const populate = async (event) =>{
 
         shinyBool = false;
 
+        if(pokemon.id <= 649){
+
         // if(pokemon.sprites.front_female === null){
         //     hiddenGender.style.display = "none";
         // }else{
@@ -165,6 +167,11 @@ const populate = async (event) =>{
             stage2.innerText = sid.chain.evolves_to[0].evolves_to[0].species.name;
         }
 
+        //did not fix multi-evo issue
+
+    }else{
+        pokName.textContent = "INVALID POKEMON"
+    }
 }
 
 
