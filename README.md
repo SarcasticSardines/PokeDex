@@ -6,7 +6,7 @@
 + day 1- create figma prototype, build out the bones of the webpage, and psuedo-code some logic
 + day 2- finish figma layout, code html skeleton and basic components, and start coding JS logic
 + day 3- finish figma functionality, finish coding JS logic, begin css styling
- 
+ + day 4- finish any JS, finish CSS and tailwind styling, upload and deploy
 
 + Peer reviewed by: 
 + Review: 
