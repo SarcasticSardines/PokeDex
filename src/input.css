@@ -61,18 +61,24 @@
     border-radius: 5px;
 }
 .purpW{
-    width: 400px;
+    width: 365px;
 }
 .bluW{
-    width: 350px;
+    width: 345px;
 }
 .boxH{
-    height: 700px;
+    height: 600px;
+}
+.movesH{
+    height: 283px;
+}
+.btmBoxB{
+    border-top: 5px solid black;
 }
 
 @media screen and (min-width: 1024px) {
     .pink{
-        height: 250px;
+        height: 290px;
     }
     .purpW{
         width: 650px;
@@ -82,5 +88,23 @@
     }
     .boxH{
         height: 450px;
+    }
+    .movesH{
+        height: 160px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .purpW{
+        width: 550px;
+    }
+    .bluW{
+        width: 500px;
+    }
+    .boxH{
+        height: 550px;
+    }
+    .movesH{
+        height: 243px;
     }
 }

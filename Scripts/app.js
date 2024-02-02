@@ -22,6 +22,7 @@ let stage1 = document.getElementById("stage1");
 let stage2 = document.getElementById("stage2");
 let grabFaves = document.getElementById("grabFaves");
 
+let pokemon;
 let shinyBool;
 
 const getPokemon = async (pokemon) => {
@@ -75,7 +76,7 @@ pokRandom.addEventListener("click", (event)=>{
 
 
 const populate = async (event) =>{
-    let pokemon = await getPokemon(event);
+     pokemon = await getPokemon(event);
         let id = await getLocation(event);
         
         let sid = await getEvo(pokemon);
@@ -154,8 +155,7 @@ const populate = async (event) =>{
             stage1.innerText =  sid.chain.evolves_to[0].species.name;
             stage2.innerText = null;
         }else if(sid?.chain?.evolves_to[0]?.species?.name === undefined){
-            evoChain.innerText = "Does Not Evolve";
-            stageBase.innerText = "";
+            stageBase.innerText = "Does Not Evolve";
             stage1.innerText = "";
             stage2.innerText = "";
         }else{
